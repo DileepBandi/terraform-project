@@ -1,6 +1,6 @@
 resource "aws_elb" "bar" {
   name               = "dileep-terraform-elb"
-  availability_zones = ["eu-west-1a", "eu-west-1b"]
+  availability_zones = ["eu-west-2a", "eu-west-2b"]
 
   listener {
     instance_port     = 80
