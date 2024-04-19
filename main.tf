@@ -1,6 +1,6 @@
 
 provider "aws" {
-region = "eu-west-1"
+region = "eu-west-2"
 }
 
 resource "aws_instance" "one" {
@@ -8,7 +8,7 @@ resource "aws_instance" "one" {
   instance_type   = "t2.micro"
   key_name        = "project_keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "eu-west-1"
+  availability_zone = "eu-west-2"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -27,7 +27,7 @@ resource "aws_instance" "two" {
   instance_type   = "t2.micro"
   key_name        = "project_keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "eu-west-1"
+  availability_zone = "eu-west-2"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -46,7 +46,7 @@ resource "aws_instance" "three" {
   instance_type   = "t2.micro"
   key_name        = "project_keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "eu-west-1"
+  availability_zone = "eu-west-2"
   tags = {
     Name = "app-server-1"
   }
@@ -57,7 +57,7 @@ resource "aws_instance" "four" {
   instance_type   = "t2.micro"
   key_name        = "project_keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "eu-west-1"
+  availability_zone = "eu-west-2"
   tags = {
     Name = "app-server-2"
   }
@@ -103,7 +103,7 @@ default = ["user1", "user2", "user3", "user4"]
 }
 
 resource "aws_ebs_volume" "eight" {
- availability_zone = "ap-southeast-1a"
+ availability_zone = "eu-west-2"
   size = 40
   tags = {
     Name = "ebs-001"
